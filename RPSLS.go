@@ -48,8 +48,8 @@ func main(){
 		var mode int;
 		fmt.Scanf("%d", &mode);
 		switch mode {
-		//default: fmt.Println("\nError: Please choose 0 or 1\n\n")
-		default: done = true			// bie bie
+		default: fmt.Println("\nError: Please choose 0 or 1\n\n")
+		case 0: done = true			// bie bie
 		case 1: ai()
 		}
 	}
@@ -71,6 +71,14 @@ func ai(){
 	printSelections()
 	fmt.Print("Please enter your choice: ")
 	fmt.Scanf("%d", &p1)
+
+	n, err := fmt.Scanf("%f\n", &inputSquare)
+    if err != nil || n != 1 {
+        // handle invalid input
+        fmt.Println(n, err)
+        return
+    }
+	
 	// make ai's choice
 	p2 = r.Intn(5) + 1;
 	fmt.Println("\nThe computer's choice is", patterns[p2], "\n")
