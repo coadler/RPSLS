@@ -1,0 +1,10 @@
+application: rpsls
+version: 2
+runtime: go
+api_version: go1
+
+handlers:
+- url: /.*
+  script: _go_app
+#- url: /(rock|paper|scissors|lizard|spock)
+#  script: _go_app
